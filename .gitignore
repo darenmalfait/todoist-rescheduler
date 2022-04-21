@@ -1,0 +1,15 @@
+node_modules
+
+/.cache
+build
+/public/build
+
+.env*
+!.env.example
+
+.vscode
+prettier.config.js
+/.idea/
+tsconfig.tsbuildinfo
+
+*_old.json
