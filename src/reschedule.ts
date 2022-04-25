@@ -29,6 +29,7 @@ const api = new TodoistApi(process.env.TODOIST_API_TOKEN)
 
       if (!success) {
         console.error(chalk.red(`Failed to reschedule task ${task.id}`))
+        return
       }
 
       console.info(chalk.blue(`Rescheduled task ${task.id} to today`))
