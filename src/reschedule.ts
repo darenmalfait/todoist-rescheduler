@@ -1,9 +1,9 @@
 import { TodoistApi } from '@doist/todoist-api-typescript'
+import chalk from 'chalk'
+import * as dotenv from 'dotenv'
 import invariant from 'tiny-invariant'
 
-const chalk = require('chalk')
-
-require('dotenv').config()
+dotenv.config()
 
 invariant(process.env.TODOIST_API_TOKEN, 'TODOIST_API_TOKEN must be set')
 
@@ -25,14 +25,12 @@ const api = new TodoistApi(process.env.TODOIST_API_TOKEN)
     console.info(chalk.blue(`Found ${tasks.length} overdue tasks.`))
 
     for (const task of tasks) {
-      const success = await api.updateTask(task.id, { dueString: 'Today' })
-
-      if (!success) {
+      try {
+        await api.updateTask(task.id, { dueString: 'Today' })
+        console.info(chalk.blue(`Rescheduled task ${task.id} to today`))
+      } catch {
         console.error(chalk.red(`Failed to reschedule task ${task.id}`))
-        return
       }
-
-      console.info(chalk.blue(`Rescheduled task ${task.id} to today`))
     }
   } catch (error: any) {
     console.error(error.message)

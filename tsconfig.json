@@ -1,13 +1,7 @@
 {
-  "include": [
-    "**/*.ts"
-  ],
+  "include": ["**/*.ts"],
   "compilerOptions": {
-    "lib": [
-      "ES2021",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "baseUrl": ".",
     "incremental": true,
     "isolatedModules": false,
@@ -16,8 +10,8 @@
     "allowJs": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "module": "es2020",
-    "target": "es2020",
+    "target": "esnext",
+    "module": "commonjs",
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
