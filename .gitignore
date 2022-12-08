@@ -13,3 +13,6 @@ prettier.config.js
 tsconfig.tsbuildinfo
 
 *_old.json
+.flaskenv*
+!.env.project
+!.env.vault
