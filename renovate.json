@@ -1,6 +1,4 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["local>darenmalfait/daren-renovate-config:bundle-all"],
+  "packageRules": []
 }
