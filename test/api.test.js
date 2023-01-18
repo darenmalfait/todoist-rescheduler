@@ -1,5 +1,7 @@
+/* eslint-disable no-inner-declarations */
+/* eslint-disable no-undef */
 // convert to require statements
-const { TodoistApi } = require('@doist/todoist-api-typescript')
+const {TodoistApi} = require('@doist/todoist-api-typescript')
 const dotenv = require('dotenv')
 const invariant = require('tiny-invariant')
 
@@ -18,7 +20,7 @@ const tests = {
 
 for (const [
   title,
-  { input, output, only = false, skip = false },
+  {input, output, only = false, skip = false},
 ] of Object.entries(tests)) {
   async function canExecute() {
     try {
@@ -30,6 +32,7 @@ for (const [
     }
   }
 
+  // eslint-disable-next-line no-loop-func
   const testHtml = () =>
     canExecute().then(result => {
       expect(result).toEqual(output)
