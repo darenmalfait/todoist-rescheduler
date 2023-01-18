@@ -26,6 +26,11 @@ const api = new TodoistApi(process.env.TODOIST_API_TOKEN)
 
     for (const task of tasks) {
       try {
+        if (task.due?.isRecurring) {
+          console.info(chalk.blue(`Task ${task.id} is recurring. Skipping.`))
+          continue
+        }
+
         await api.updateTask(task.id, { dueString: 'Today' })
         console.info(chalk.blue(`Rescheduled task ${task.id} to today`))
       } catch {
