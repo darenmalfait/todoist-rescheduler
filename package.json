@@ -21,9 +21,9 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
-    "@types/jest": "^29.2.5",
+    "@types/jest": "^29.2.6",
     "eslint": "^8.32.0",
-    "eslint-config-daren": "^3.8.1",
+    "eslint-config-daren": "^3.9.0",
     "husky": "^8.0.3",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
