@@ -13,13 +13,13 @@
     "validate": "npm test && run-s lint:*"
   },
   "dependencies": {
-    "@doist/todoist-api-typescript": "^3.0.2",
+    "@doist/todoist-api-typescript": "^3.0.3",
     "dotenv": "^16.4.5",
     "tiny-invariant": "^1.3.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.2.0",
-    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/jest": "^29.5.12",
     "eslint": "^8.57.0",
     "eslint-config-daren": "^4.2.3",
