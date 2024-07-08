@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@doist/todoist-api-typescript':
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^3.0.3
+        version: 3.0.3(type-fest@0.21.3)
       dotenv:
         specifier: ^16.3.1
         version: 16.4.5
@@ -305,8 +305,10 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@doist/todoist-api-typescript@2.2.0':
-    resolution: {integrity: sha512-U8we7s2RPT0yHet4nBA+Eth2AYfZprDe1WoVsw67oDISbx5T2UQ42hUPJlY0NoDM5X0S8nuf3y9z2lQhSUnsYQ==}
+  '@doist/todoist-api-typescript@3.0.3':
+    resolution: {integrity: sha512-rDYE6X/xSF+b+fvRYoVyBa7EaUOSIKhTrn7/XxV3Fm2rQrK61SoImor5pyWZlMiABH44WMf+FBIh+IjGAGaX3Q==}
+    peerDependencies:
+      type-fest: ^4.12.0
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -772,16 +774,16 @@ packages:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
 
-  axios-case-converter@0.11.1:
-    resolution: {integrity: sha512-i5hrkBg7SE9jsm2Q+ClznR5DsKcYXChH6Cc3Rhx2p4gdIfJwvvO5/ATcAg/vN2UVzGE2B1eR1O4VuEGkICdJdQ==}
+  axios-case-converter@1.1.1:
+    resolution: {integrity: sha512-v13pB7cYryh/7f4TKxN/gniD2hwqPQcjip29Hk3J9iwsnA37Rht2Hkn5VyrxynxlKdMNSIfGk6I9D6G28oTRyQ==}
     peerDependencies:
-      axios: '>=0.23.0 <2.0.0'
+      axios: '>=1.0.0 <2.0.0'
 
   axios-retry@3.9.1:
     resolution: {integrity: sha512-8PJDLJv7qTTMMwdnbMvrLYuvB47M81wRtxQmEdV5w4rgbTXTt+vtPkXwajOfOdSyv/wZICJOC+/UhXH4aQ/R+w==}
 
-  axios@0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+  axios@1.7.2:
+    resolution: {integrity: sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==}
 
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
@@ -2330,6 +2332,9 @@ packages:
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
+  proxy-from-env@1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+
   psl@1.9.0:
     resolution: {integrity: sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==}
 
@@ -3271,13 +3276,14 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@doist/todoist-api-typescript@2.2.0':
+  '@doist/todoist-api-typescript@3.0.3(type-fest@0.21.3)':
     dependencies:
-      axios: 0.27.2
-      axios-case-converter: 0.11.1(axios@0.27.2)
+      axios: 1.7.2
+      axios-case-converter: 1.1.1(axios@1.7.2)
       axios-retry: 3.9.1
       runtypes: 6.7.0
       ts-custom-error: 3.3.1
+      type-fest: 0.21.3
       uuid: 9.0.1
     transitivePeerDependencies:
       - debug
@@ -3963,9 +3969,9 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.0.0
 
-  axios-case-converter@0.11.1(axios@0.27.2):
+  axios-case-converter@1.1.1(axios@1.7.2):
     dependencies:
-      axios: 0.27.2
+      axios: 1.7.2
       camel-case: 4.1.2
       header-case: 2.0.4
       snake-case: 3.0.4
@@ -3976,10 +3982,11 @@ snapshots:
       '@babel/runtime': 7.24.7
       is-retry-allowed: 2.2.0
 
-  axios@0.27.2:
+  axios@1.7.2:
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
 
@@ -5792,6 +5799,8 @@ snapshots:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
+
+  proxy-from-env@1.1.0: {}
 
   psl@1.9.0: {}
 
