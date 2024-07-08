@@ -1,4 +1,4 @@
 {
-  "extends": ["local>darenmalfait/daren-renovate-config:bundle-all"],
-  "packageRules": []
+	"extends": ["local>darenmalfait/daren-renovate-config:bundle-all"],
+	"packageRules": []
 }

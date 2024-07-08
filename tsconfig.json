@@ -1,20 +1,11 @@
 {
-  "include": ["**/*.ts"],
-  "compilerOptions": {
-    "lib": ["ES2021", "DOM", "DOM.Iterable"],
-    "baseUrl": ".",
-    "incremental": true,
-    "isolatedModules": false,
-    "importsNotUsedAsValues": "error",
-    "noEmit": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "target": "esnext",
-    "module": "commonjs",
-    "strict": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "noUncheckedIndexedAccess": true
-  }
+	"extends": "@nerdfish/config/typescript",
+	"include": [
+		"@nerdfish/config/reset.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.js",
+		"**/*.jsx"
+	],
+	"exclude": ["node_modules"]
 }

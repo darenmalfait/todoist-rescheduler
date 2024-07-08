@@ -1,7 +1,6 @@
-/* eslint-disable no-inner-declarations */
 /* eslint-disable no-undef */
 // convert to require statements
-const {TodoistApi} = require('@doist/todoist-api-typescript')
+const { TodoistApi } = require('@doist/todoist-api-typescript')
 const dotenv = require('dotenv')
 const invariant = require('tiny-invariant')
 
@@ -12,37 +11,40 @@ invariant(process.env.TODOIST_API_TOKEN, 'TODOIST_API_TOKEN must be set')
 const api = new TodoistApi(process.env.TODOIST_API_TOKEN)
 
 const tests = {
-  'Should be able to fetch tasks': {
-    input: api.getTasks({}),
-    output: true,
-  },
+	'Should be able to fetch tasks': {
+		input: api.getTasks({}),
+		output: true,
+	},
 }
 
 for (const [
-  title,
-  {input, output, only = false, skip = false},
+	title,
+	{ input, output, only = false, skip = false },
 ] of Object.entries(tests)) {
-  async function canExecute() {
-    try {
-      await input
+	async function canExecute() {
+		try {
+			await input
 
-      return true
-    } catch (error) {
-      return false
-    }
-  }
+			return true
+		} catch (error) {
+			if (error instanceof Error) {
+				console.error('Error fetching tasks', error)
+			}
 
-  // eslint-disable-next-line no-loop-func
-  const testHtml = () =>
-    canExecute().then(result => {
-      expect(result).toEqual(output)
-    })
+			return false
+		}
+	}
 
-  if (only) {
-    test.only(title, testHtml)
-  } else if (skip) {
-    test.skip(title, testHtml)
-  } else {
-    test(title, testHtml)
-  }
+	const testHtml = () =>
+		canExecute().then((result) => {
+			expect(result).toEqual(output)
+		})
+
+	if (only) {
+		test.only(title, testHtml)
+	} else if (skip) {
+		test.skip(title, testHtml)
+	} else {
+		test(title, testHtml)
+	}
 }
