@@ -12,13 +12,13 @@ jobs:
     name: Build PR
     steps:
       - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.0
+        uses: styfle/cancel-workflow-action@0.12.1
 
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: ⎔ Setup node
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
         with:
           node-version-file: '.nvmrc'
 
