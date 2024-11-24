@@ -22,40 +22,40 @@ importers:
         version: 10.9.2(@types/node@20.14.10)(typescript@5.6.3)
     devDependencies:
       '@commitlint/cli':
-        specifier: 19.5.0
+        specifier: ^19.5.0
         version: 19.5.0(@types/node@20.14.10)(typescript@5.6.3)
       '@commitlint/config-conventional':
-        specifier: 19.5.0
+        specifier: ^19.5.0
         version: 19.5.0
       '@nerdfish/config':
-        specifier: 1.0.9
+        specifier: ^1.0.9
         version: 1.0.9(@typescript-eslint/utils@8.13.0(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(prettier@3.3.3)(typescript@5.6.3)
       '@types/jest':
-        specifier: 29.5.14
+        specifier: ^29.5.14
         version: 29.5.14
       eslint:
-        specifier: 9.14.0
+        specifier: ^9.14.0
         version: 9.14.0(jiti@1.21.6)
       husky:
-        specifier: 9.1.6
+        specifier: ^9.1.6
         version: 9.1.6
       jest:
-        specifier: 29.7.0
+        specifier: ^29.7.0
         version: 29.7.0(@types/node@20.14.10)(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.6.3))
       jest-environment-jsdom:
-        specifier: 29.7.0
+        specifier: ^29.7.0
         version: 29.7.0
       npm-run-all2:
-        specifier: 7.0.1
+        specifier: ^7.0.1
         version: 7.0.1
       prettier:
-        specifier: 3.3.3
+        specifier: ^3.3.3
         version: 3.3.3
       prettier-plugin-tailwindcss:
-        specifier: 0.6.8
+        specifier: ^0.6.8
         version: 0.6.8(prettier@3.3.3)
       typescript:
-        specifier: 5.6.3
+        specifier: ^5.6.3
         version: 5.6.3
 
 packages:
