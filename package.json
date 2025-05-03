@@ -27,9 +27,9 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@nerdfish/config": "^1.9.1",
+    "@nerdfish/config": "^1.9.2",
     "@types/jest": "^29.5.14",
-    "eslint": "^9.25.1",
+    "eslint": "^9.26.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
