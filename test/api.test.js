@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+/** @jest-environment node */
 // convert to require statements
 const { TodoistApi } = require('@doist/todoist-api-typescript')
 const dotenv = require('dotenv')
@@ -28,7 +29,11 @@ for (const [
 			return true
 		} catch (error) {
 			if (error instanceof Error) {
-				console.error('Error fetching tasks', error)
+				console.error(
+					'Error fetching tasks',
+					error.message || error,
+					error.cause,
+				)
 			}
 
 			return false

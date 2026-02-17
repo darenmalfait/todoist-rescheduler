@@ -14,7 +14,19 @@ const ignores = [
 ]
 
 module.exports = {
-	testEnvironment: 'jsdom',
-	testPathIgnorePatterns: [...ignores],
-	coveragePathIgnorePatterns: [...ignores, 'src/(umd|cjs|esm)-entry.js$'],
+	projects: [
+		{
+			displayName: 'node',
+			testMatch: ['**/api.test.js'],
+			testEnvironment: 'node',
+			testPathIgnorePatterns: [...ignores],
+		},
+		{
+			displayName: 'jsdom',
+			testMatch: ['**/*.test.js', '!**/api.test.js'],
+			testEnvironment: 'jsdom',
+			testPathIgnorePatterns: [...ignores],
+			coveragePathIgnorePatterns: [...ignores, 'src/(umd|cjs|esm)-entry.js$'],
+		},
+	],
 }

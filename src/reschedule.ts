@@ -12,19 +12,19 @@ async function run() {
 	console.info('Rescheduler started.')
 
 	try {
-		const tasks = await api.getTasks({
-			filter: 'overdue',
+		const tasks = await api.getTasksByFilter({
+			query: 'overdue',
 		})
 
-		if (!tasks.length) {
+		if (!tasks.results.length) {
 			console.info('No overdue tasks found.')
 			return
 		}
 
-		console.info(`Found ${tasks.length} overdue tasks.`)
+		console.info(`Found ${tasks.results.length} overdue tasks.`)
 
 		const promises = []
-		for (const task of tasks) {
+		for (const task of tasks.results) {
 			try {
 				if (task.due?.isRecurring) {
 					console.info(`Task ${task.id} is recurring. Skipping.`)
